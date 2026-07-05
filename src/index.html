@@ -1,320 +1,311 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-      <link href="./output.css" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[hsl(243,96%,9%)] text-white px-6 py-4">
+    <header class="flex justify-between py-5">
+      <div class="logo w-25 md:w-50">
+        <img src="../images/logo.svg" alt="Weather App Logo" class="" />
+      </div>
 
+      <div class="flex gap-1 bg-blue-600/10 w-20 md:w-25 px-2 py-1 rounded-lg">
+        <img src="../images/icon-units.svg" alt="Units" class="w-3 md:w-6" />
+        <button>Units</button>
+        <img src="../images/icon-dropdown.svg" alt="dropdown" class="w-3" />
+      </div>
+    </header>
 
-      
-</head>
-<body class = "bg-[hsl(243,96%,9%)] text-white px-6  py-4">
+    <!-- MAIN -->
 
+    <main class="flex flex-col items-center gap-8">
+      <p
+        class="text-5xl md:text-7xl font-medium text-center py-8 mx-[80px] font-[DM Sans]"
+      >
+        How's the sky looking today?
+      </p>
 
- <header class="flex justify-between ">
+      <!-- search button -->
+      <div class="flex flex-col md:flex-row gap-3">
+        <input
+          type="text"
+          placeholder="Search for a place"
+          class="rounded-lg w-100 lg:w-150 bg-gray-400/30 text-white text-center lg:text-start border-none h-11"
+        />
 
-                <div class="logo w-25 md:w-50 "> 
-                   <img src="../images/logo.svg" alt="Weather App Logo" > 
-                
-                </div>
+        <button
+          type="button"
+          id="getWeather"
+          class="bg-blue-700 px-3 rounded-lg text-sm lg:w-30 h-11"
+        >
+          Search
+        </button>
+      </div>
 
-                    <div class="flex gap-1">
-                        
-                        <img src="../images/icon-units.svg" alt="Units"> 
-                        <button>Units</button>
-                    
-                    </div>
+      <!-- weather grid layout  -->
 
- </header>
+      <div
+        class="weatherGridLayout grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 h-100 md:grid-rows-3 lg:grid-rows-3 xl:grid-rows-3 gap-4"
+      >
+        <!-- the blue display backgroung -->
+        <div
+          class="bg-[url(../images/bg-today-large.svg)] bg-cover bg-no-repeat rounded-lg p-4 flex flex-col justify-between items-center mx-[20px] h-60"
+        >
+          <div class="text-center">
+            <p class="text-3xl font-medium">Berlin,Germany</p>
+            <p class="text-lg font-medium text-gray-400 py-2">
+              Tuesday,Aug5, 2025
+            </p>
+          </div>
 
-        <!-- MAIN -->
-         
-<main class="">
-                <p>How's the sky looking today? </p>
+          <div class="flex flex-row gap-15">
+            <img
+              src="../images/icon-sunny.webp"
+              alt="Sunny Icon"
+              class="w-30"
+            />
+            <i><p class="text-5xl font-medium">20</p></i>
+          </div>
+        </div>
 
-                <!-- search button -->
-                <div> 
-                    
-                <input type="text" placeholder="Search for a place" class="rounded-sm border bg-gray-600 text-white  ">
-
-
-                <button type="button" id="getWeather" class="bg-blue-600 px-3 rounded-xs text-sm">Search</button>
-
-                </div> 
-
-<!-- weather grid layout  -->
-
-<div class="weatherGridLayout  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3  h-100 md:grid-rows-3  lg:grid-rows-3  xl:grid-rows-3 gap-4 ">
-                    
-                    <!-- the blue display backgroung -->
-     <div class="bg-[url(../images/bg-today-large.svg)] bg-cover bg-no-repeat rounded-lg p-4 flex flex-row justify-between items-center md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2">
-                        
-                        <div>
-                            
-                        <p>Berlinh,germany 
-                        </p>
-                        <p>Tuesday,Aug5, 2025</p>
-                        </div>
-
-
-                    
-                          <div>
-                    <img src="../images/icon-sunny.webp" alt="Sunny Icon" class="w-20 h-20">
-                    <p>20</p>
-                </div>
-
-
-    </div>
-
-     <!-- HOURLY FORECAST DIV -->
-     <div class=" text-[10px] bg-[red]  md:row-start-1 md:row-end-4 md:col-start-3 md:col-end-4" >
-
-                <div class="flex flex-row  justify-between bg-[green]">
-
-                       <p>Hourly Forecast</p> 
-
-                <!-- drop down -->
-                <div>
-                <button id="hourlyDropdown" class="bg-[hsl(243,23%,24%)] px-2 py-1 rounded-[3px]">Tuesday </button>
-
-                    <div id="daysOfTheWeek" class="hidden  absolute ">
-                          <div> <button>Sunday</button>  </div>
-                            <div> <button>Monday</button> </div>
-                            <div> <button>Tuesday</button> </div>
-                            <div>  <button>Wednesday</button> </div>
-                            <div>  <button>Thursday</button> </div>
-                            <div> <button>Friday</button> </div>
-                            <div>  <button>Saturday</button> </div>
-                       
-                    </div>
-                </div>
-
-                </div>
-
-                <!-- hours -->
-                <div class="hours flex flex-col gap-2">
-
-                    <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800 ">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800 ">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-                <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-
-                <div class="flex flex-row justify-between bg-gray-800">
-                    <div class="flex flex-row gap-2 ">
-                     <img src="../images/icon-storm.webp" alt="weather state">
-                    <p class=" text-[1.5rem]">3 PM</p>
-                    </div>
-
-                    <P class="text[1rem]">17'</P>
-                </div>
-                    
-                </div>
-
-                
-           
-            
-
-     </div>   
-     
-
-<!-- left grid spannning 2-4 rows and column 1-3  -->
-<div class="md:col-start-1 md:col-end-3 md:row-start-2 md:row-end-4">  
-
- <!-- WEATHER CONDITIONS -->
-
-
- <div class="weather-conditions flex flex-row gap-2">
-
-        <div id="displayWeatherDegree">
+        <!-- weather-conditions-->
+        <div class="grid grid-cols-2 gap-3 mx-[20px]">
+          <div id="displayWeatherDegree" class="bg-gray-600/50 p-6 rounded-lg">
             <p>Feels Like</p>
             <p>18</p>
-        </div>
+          </div>
 
-         <div id="displayWeatherHumidity">
+          <div
+            id="displayWeatherHumidity"
+            class="bg-gray-600/50 p-6 rounded-lg"
+          >
             <p>Humidity</p>
             <p>46%</p>
-        </div>
+          </div>
 
-         <div id="displayWeatherWind">
+          <div id="displayWeatherWind" class="bg-gray-600/50 p-6 rounded-lg">
             <p>Wind</p>
             <p>14 km/h</p>
-        </div>
+          </div>
 
-         <div id="displayWeatherprecipation">
+          <div
+            id="displayWeatherprecipation"
+            class="bg-gray-600/50 p-6 rounded-lg"
+          >
             <p>Precipation</p>
             <p>0 mm</p>
+          </div>
         </div>
 
-</div>
-
- <!-- DAILY FORECAST -->
-
-<div>
-    <p>Daily Forecast</p>
-
-
-        <!-- DAILY FORECAST SQUARES -->
-    <div class="flex flex-row gap-2">
-
-            <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
-             <div>
-                <p>Tue</p>
-                <img src="" alt="weather behaviour icon">
-
-                <div>
-                    <p>20</p> 
-                    <p>14</p>
-                </div>
-            </div>
-
+        <!-- WEATHER CONDITIONS --> <!-- DAILY FORECAST --><!-- DAILY FORECAST SQUARES -->
             
+        <p class="m-0">Daily Forecast</p>
+        <div class="p-5 grid grid-cols-3 justify-between gap-3"> 
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-rain.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-overcast.webp" alt="weather behaviour icon" class="w-15 mx-1" />
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
-     </div>
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-sunny.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-partly-cloudy.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
- </div>
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-storm.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
-  </div>
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-snow.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
 
+            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+                <div class="text-center">
+                    <p>Tue</p>
+                    <img src="../images/icon-fog.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
+                </div>
+                <div class="flex flex-row gap-8">
+                    <p>20</p>
+                    <p>14</p>
+                </div>
+            </div>
+        </div>
 
-                </div>   <!-- CLOSING TAG OF THE WEATHER GRID LAYOUT -->
+      <!-- CLOSING TAG OF THE WEATHER GRID LAYOUT -->
 
+      <!-- HOURLY FORECAST DIV -->
+      <div
+        class="text-[20px] bg-gray-400/30 rounded-lg md:row-start-1 md:row-end-4 md:col-start-3 md:col-end-4"
+      >
+        <div class="flex flex-row justify-between">
+          <p>Hourly Forecast</p>
 
-</main>
+          <!-- drop down -->
+          <div>
+            <button
+              id="hourlyDropdown"
+              class="bg-gray-400/200 p-3 rounded-[3px]"
+            >
+              Tuesday
+            </button>
 
-        
+            <div id="daysOfTheWeek" class="hidden absolute">
+              <div><button>Sunday</button></div>
+              <div><button>Monday</button></div>
+              <div><button>Tuesday</button></div>
+              <div><button>Wednesday</button></div>
+              <div><button>Thursday</button></div>
+              <div><button>Friday</button></div>
+              <div><button>Saturday</button></div>
+            </div>
+          </div>
+        </div>
 
-        <script src="./index.js"></script>
+        <!-- hours -->
+        <div class="hours flex flex-col gap-2">
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
 
-</body>
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+
+          <div class="flex flex-row justify-between bg-gray-800">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-storm.webp" alt="weather state" />
+              <p class="text-[1.5rem]">3 PM</p>
+            </div>
+
+            <p class="text[1rem]">17'</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- left grid spannning 2-4 rows and column 1-3  -->
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
-
-
 
 <!-- 
 ## Colors
@@ -337,12 +328,5 @@
 
 - **Blue 500**: hsl(233, 67%, 56%)
 - **Blue 700**: hsl(248, 70%, 36%) -->
-
-
-
-
-
-
-
 
 <!-- npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch -->
