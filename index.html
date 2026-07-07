@@ -42,17 +42,17 @@
       </p>
 
       <!-- search button -->
-      <div class="flex flex-col md:flex-row gap-3">
+      <div class="flex flex-col md:flex-row gap-4 p-1">
         <input
           type="text"
           placeholder="Search for a place"
-          class="rounded-lg w-100 lg:w-150 bg-gray-400/30 text-white text-center lg:text-start border-none h-11"
+          class="rounded-lg w-108 lg:w-150 bg-gray-400/30 text-white text-center lg:text-start border-none h-14"
         />
 
         <button
           type="button"
           id="getWeather"
-          class="bg-blue-700 px-3 rounded-lg text-sm lg:w-30 h-11"
+          class="bg-blue-700 px-3 rounded-lg text-lg lg:w-30 h-14"
         >
           Search
         </button>
@@ -65,7 +65,7 @@
       >
         <!-- the blue display backgroung -->
         <div
-          class="bg-[url(../images/bg-today-large.svg)] bg-cover bg-no-repeat rounded-lg p-4 flex flex-col justify-between items-center mx-[20px] h-60"
+          class="bg-[url(../images/bg-today-large.svg)] bg-cover bg-no-repeat rounded-lg p-1 flex flex-col justify-between items-center h-60"
         >
           <div class="text-center">
             <p class="text-3xl font-medium">Berlin,Germany</p>
@@ -78,14 +78,14 @@
             <img
               src="../images/icon-sunny.webp"
               alt="Sunny Icon"
-              class="w-30"
+              class="w-40"
             />
-            <i><p class="text-5xl font-medium">20</p></i>
+            <i><p class="text-7xl font-medium">20</p></i>
           </div>
         </div>
 
         <!-- weather-conditions-->
-        <div class="grid grid-cols-2 gap-3 mx-[20px]">
+        <div class="grid grid-cols-2 gap-3 p-1">
           <div id="displayWeatherDegree" class="bg-gray-600/50 p-6 rounded-lg">
             <p>Feels Like</p>
             <p>18</p>
@@ -115,9 +115,9 @@
 
         <!-- WEATHER CONDITIONS --> <!-- DAILY FORECAST --><!-- DAILY FORECAST SQUARES -->
             
-        <p class="m-0">Daily Forecast</p>
-        <div class="p-5 grid grid-cols-3 justify-between gap-3"> 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+        <p class="font-medium text-lg ">Daily Forecast</p>
+        <div class="p-1 grid grid-cols-3 gap-3"> 
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-rain.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -128,7 +128,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-overcast.webp" alt="weather behaviour icon" class="w-15 mx-1" />
@@ -139,7 +139,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-sunny.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -150,7 +150,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-partly-cloudy.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -161,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-storm.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -172,7 +172,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-snow.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -183,7 +183,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-400/25 rounded-lg w-25 h-40 p-3">
+            <div class="bg-gray-400/25 rounded-lg h-40 p-3">
                 <div class="text-center">
                     <p>Tue</p>
                     <img src="../images/icon-fog.webp" alt="weather behaviour icon" class="w-15 mx-1"/>
@@ -198,107 +198,91 @@
       <!-- CLOSING TAG OF THE WEATHER GRID LAYOUT -->
 
       <!-- HOURLY FORECAST DIV -->
-      <div
-        class="text-[20px] bg-gray-400/30 rounded-lg md:row-start-1 md:row-end-4 md:col-start-3 md:col-end-4"
-      >
+    <div class="px-1">
+      <div class="bg-gray-400/30  rounded-3xl p-2 ">
         <div class="flex flex-row justify-between">
-          <p>Hourly Forecast</p>
-
-          <!-- drop down -->
-          <div>
-            <button
-              id="hourlyDropdown"
-              class="bg-gray-400/200 p-3 rounded-[3px]"
-            >
-              Tuesday
-            </button>
-
-            <div id="daysOfTheWeek" class="hidden absolute">
-              <div><button>Sunday</button></div>
-              <div><button>Monday</button></div>
-              <div><button>Tuesday</button></div>
-              <div><button>Wednesday</button></div>
-              <div><button>Thursday</button></div>
-              <div><button>Friday</button></div>
-              <div><button>Saturday</button></div>
-            </div>
+          <p class="text-xl p-3 font-medium">Hourly Forecast</p>
+          <div class="p-3">
+            <select name="" class="bg-gray-400/20 text-sm font-medium p-2 rounded-lg" id="hourlyDropdown">Choose a day
+              <option value="">Sunday</option>
+              <option value="">Monday</option>
+              <option value="">Tuesday</option>
+              <option value="">Wednesday</option>
+              <option value="">Thursday</option>
+              <option value="">Friday</option>
+              <option value="">Saturday</option>
+            </select>
           </div>
         </div>
 
         <!-- hours -->
-        <div class="hours flex flex-col gap-2">
-          <div class="flex flex-row justify-between bg-gray-800">
+        <div class="hours flex flex-col p-3 justify-between gap-5">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-overcast.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-partly-cloudy.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-sunny.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-overcast.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-snow.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-fog.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
-
-            <p class="text[1rem]">17'</p>
-          </div>
-          <div class="flex flex-row justify-between bg-gray-800">
-            <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
-            </div>
-
-            <p class="text[1rem]">17'</p>
+              <p class="text[1rem]">20'</p>
           </div>
 
-          <div class="flex flex-row justify-between bg-gray-800">
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
             <div class="flex flex-row gap-2">
-              <img src="../images/icon-storm.webp" alt="weather state" />
-              <p class="text-[1.5rem]">3 PM</p>
+              <img src="../images/icon-snow.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
             </div>
+              <p class="text[1rem]">20'</p>
+          </div>
 
-            <p class="text[1rem]">17'</p>
+          <div class="flex flex-row justify-between bg-gray-400/10 p-2 rounded-lg">
+            <div class="flex flex-row gap-2">
+              <img src="../images/icon-overcast.webp" alt="weather-state" />
+              <p class="text-xl">3 PM</p>
+            </div>
+              <p class="text[1rem]">20'</p>
           </div>
         </div>
       </div>
+    </div>
 
       <!-- left grid spannning 2-4 rows and column 1-3  -->
     </main>
